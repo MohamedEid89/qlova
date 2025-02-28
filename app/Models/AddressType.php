@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\City;
 use Illuminate\Database\Eloquent\Model;
 
 class AddressType extends Model
@@ -14,9 +15,5 @@ class AddressType extends Model
         return $this->hasMany(Address::class);
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-    
+
 }

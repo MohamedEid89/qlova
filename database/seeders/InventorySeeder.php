@@ -1,17 +1,18 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\Product;
 use App\Models\Inventory;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-return new class extends Migration
+class InventorySeeder extends Seeder
 {
     /**
-     * Run the migrations.
+     * Run the database seeds.
      */
-    public function up(): void
+    public function run(): void
     {
         $products = Product::all();
 
@@ -25,12 +26,4 @@ return new class extends Migration
             ]);
         }
     }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('inventories');
-    }
-};
+}
